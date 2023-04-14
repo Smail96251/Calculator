@@ -1,4 +1,5 @@
 const buttons = document.querySelectorAll(".btn");
+const clearButton = document.querySelector("#clearBtn");
 const currentScreen = document.querySelector(".screen-current");
 const screenLast = document.querySelector(".screen-last");
 
@@ -26,4 +27,13 @@ function getNumberAndSign(e) {
   }
 }
 
+function clear() {
+  firstNumber = "";
+  lastNumber = "";
+  sign = "";
+  currentScreen.textContent = "0";
+  screenLast.textContent = "";
+}
+
 buttons.forEach((button) => button.addEventListener("click", getNumberAndSign));
+clearButton.addEventListener("click", clear);
