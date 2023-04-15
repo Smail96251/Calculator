@@ -1,6 +1,7 @@
 const buttons = document.querySelectorAll(".btn");
 const clearButton = document.querySelector("#clearBtn");
 const equalsBtn = document.querySelector("#equalsBtn");
+const deleteBtn = document.querySelector("#deleteBtn");
 const currentScreen = document.querySelector(".screen-current");
 const screenLast = document.querySelector(".screen-last");
 
@@ -71,6 +72,19 @@ function clear() {
   screenLast.textContent = "";
 }
 
+function deleteNumber() {
+  if (firstNumber != "") {
+    lastNumber = lastNumber.slice(0, -1);
+    currentScreen.textContent = lastNumber;
+  }
+
+  if (lastNumber == "" && sign == "") {
+    firstNumber = firstNumber.slice(0, -1);
+    currentScreen.textContent = firstNumber;
+  }
+}
+
 buttons.forEach((button) => button.addEventListener("click", getNumberAndSign));
 clearButton.addEventListener("click", clear);
+deleteBtn.addEventListener("click", deleteNumber);
 equalsBtn.addEventListener("click", equals);
