@@ -4,6 +4,7 @@ const equalsBtn = document.querySelector("#equalsBtn");
 const deleteBtn = document.querySelector("#deleteBtn");
 const currentScreen = document.querySelector(".screen-current");
 const screenLast = document.querySelector(".screen-last");
+const date = document.querySelector("#date");
 
 let firstNumber = "";
 let lastNumber = "";
@@ -88,3 +89,5 @@ buttons.forEach((button) => button.addEventListener("click", getNumberAndSign));
 clearButton.addEventListener("click", clear);
 deleteBtn.addEventListener("click", deleteNumber);
 equalsBtn.addEventListener("click", equals);
+
+date.textContent = new Date().getFullYear();
